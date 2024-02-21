@@ -24,7 +24,7 @@ const ExpenseList = ({ expenses, handleClear, initialExpenses, handleDelete, han
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                      >
+                      > 
                         <ExpenseItem
                           key={item.index}
                           expense={item}
@@ -38,7 +38,6 @@ const ExpenseList = ({ expenses, handleClear, initialExpenses, handleDelete, han
               })}
               {provided.placeholder}
 
-              <div />
             </div>
           )}
         </Droppable>

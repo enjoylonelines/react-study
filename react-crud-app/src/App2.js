@@ -95,9 +95,7 @@ const App2 = () => {
       <h1>장바구니</h1>
       {alert.show ? <Alert type={alert.type} text={alert.text} /> : null}
 
-      {expenses && (
-        <DragDropContext onDragEnd={onDragEnd}>
-          <div style={{ width: '100%', backgroundColor: 'white', padding: '1rem' }}>
+      <div style={{ width: '100%', backgroundColor: 'white', padding: '1rem' }}>
             {/* Expense Form */}
             <ExpenseForm
               charge={charge}
@@ -108,6 +106,9 @@ const App2 = () => {
               edit={edit}
             />
           </div>
+          
+      {expenses && (
+        <DragDropContext onDragEnd={onDragEnd}>
 
           <div style={{ width: '100%', backgroundColor: 'white', padding: '1rem' }}>
             {/* Expense List */}
