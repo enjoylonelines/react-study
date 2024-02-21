@@ -12,13 +12,13 @@ const ExpenseItem = ({expense, handleEdit, handleDelete}) => {
             <div>
                 <button 
                     className='edit-btn'
-                    onClick={() => handleEdit(expense.id)}
+                    onClick={() => handleEdit(expense.index)}
                 >
                     <MdEdit />
                 </button>
                 <button
                     className='clear-btn'
-                    onClick={() => handleDelete(expense.id)}
+                    onClick={() => handleDelete(expense.index)}
                 >
                   <MdDelete />
                 </button>
