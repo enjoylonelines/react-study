@@ -106,3 +106,26 @@
     }
   }
 }
+
+.swiper-pagination {
+  text-align: center !important;
+}
+
+.swiper-pagination-bullet {
+  background: gray !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+.swiper-button-prev {
+  color: white !important;
+}
+
+
+.swiper-button-next {
+  color: white !important;
+}
+
