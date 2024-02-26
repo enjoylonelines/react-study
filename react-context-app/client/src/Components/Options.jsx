@@ -7,7 +7,7 @@ const Options = () => {
         type='checkbox'
         id='option'
       />
-      <label htmlFor='option'></label>
+      <label htmlFor='option'>Option</label>
     </form>
   )
 }
