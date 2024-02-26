@@ -4,6 +4,7 @@ import './App.css';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseList from "./components/ExpenseList";
 import Alert from "./components/Alert";
+import Summary from './components/Summary'
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -121,11 +122,7 @@ const App2 = () => {
             />
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'start', marginTop: '1rem' }}>
-            <p style={{ fontSize: '2rem' }}>
-              총합계: <span>{expenses.reduce((acc, cur) => acc += cur.amount, 0)}</span>
-            </p>
-          </div>
+        <Summary expenses={expenses}/>
         </DragDropContext>
       )}
     </>
