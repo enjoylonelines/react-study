@@ -1,25 +1,32 @@
-import React from 'react'
-import Type from '../../Components/Type'
+import React, { useContext } from "react";
+import Type from "../../components/Type";
+import { OrderContext } from "../../context/OrderContext";
+import Step from "../../components/Step";
 
-const OrderPage = () => {
+const OrderPage = ({ setStep }) => {
+  const [orderData] = useContext(OrderContext);
+  console.log("setStep", setStep);
   return (
-    <div>
-      <h1>Travel Products</h1>
+    <>
+      <Step step={0} />
       <div>
-        <Type orderType='products' />
-      </div>
-      <div style={{display: 'flex', marginTop: 20}}>
-        <div style={{width: '50%'}}>
-          <Type orderType='options' />
+        <h1>Travel Products</h1>
+        <div>
+          <Type orderType="products" />
         </div>
-        <div style={{ width: '50%' }}>
-          <h2>Total Price: </h2>
-          <br />
-          <button>주문</button>
+        <div style={{ display: "flex", marginTop: 20 }}>
+          <div style={{ width: "50%" }}>
+            <Type orderType="options" />
+          </div>
+          <div style={{ width: "50%" }}>
+            <h2>Total Price: {orderData.totals.total} </h2>
+            <br />
+            <button onClick={() => setStep(1)}>주문</button>
+          </div>
         </div>
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default OrderPage
+export default OrderPage;
