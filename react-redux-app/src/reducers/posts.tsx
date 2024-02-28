@@ -11,13 +11,13 @@ interface Post {
 
 interface Action {
   type: ActionType;
-  payLoad: Post[];
+  payload: Post[];
 }
 
 const posts = (state = [], action: Action) => {
   switch(action.type) {
     case 'FETCH_POST':
-      return [...state, ...action.payLoad];
+      return [...state, ...action.payload];
     default:
       return state;
 
