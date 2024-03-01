@@ -13,26 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -45,6 +31,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-right: 5px;
 }
 button:hover {
   border-color: #646cff;
@@ -65,4 +52,22 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.user-input { 
+  display: flex; 
+  align-items: center;
+  margin: 1rem; 
+}
+
+.user-input input { 
+  width: 150px;
+  height: 2rem;
+  margin-right: 1rem;
+  font-size: 2rem; 
+}
+
+.count {
+  font-size: 2rem;
+  color: #747bff;
 }
