@@ -3,6 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &:hover {
+    background-color: #444444;
+  }
   .button {
     height: 2rem;
     padding: 0 1rem;

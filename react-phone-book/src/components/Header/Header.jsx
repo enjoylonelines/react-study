@@ -10,7 +10,7 @@ const Header = () => {
     <header className={styles.header}>
       <p>연락처</p>
       <button onClick={() => dispatch(toggleModal())} className={styles.button}>+</button>
-      <Modal />
+      <Modal type="add"/>
     </header>
   )
 }

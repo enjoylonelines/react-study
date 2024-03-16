@@ -4,6 +4,7 @@ const initialState = {
   profiles: [],
   searchs: [],
   isSearch: false,
+  selectedProfile: undefined,
 };
 
 const phoneBookSlice = createSlice({
@@ -31,7 +32,14 @@ const phoneBookSlice = createSlice({
     checkSearchState(prevState, { payload }) {
       if (payload.trim() === '') return { ...prevState, isSearch: false };
       else return { ...prevState, isSearch: true };
-    }
+    },
+    selectProfile(prevState, { payload }) {
+      const selectedProfile = prevState.profiles.filter(prof => prof.id === payload);
+      return {
+        ...prevState,
+        selectedProfile,
+      }
+    },
   }
 })
 
@@ -40,4 +48,5 @@ export const {
   addProfile,
   delProfile,
   searchProfile,
-  checkSearchState } = phoneBookSlice.actions;
+  checkSearchState,
+  selectProfile, } = phoneBookSlice.actions;

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { delProfile } from "../../store/phoneBook";
+import { delProfile, selectProfile } from "../../store/phoneBook";
 import styles from "./PhoneBookItem.module.scss";
 
 const PhoneBookItem = ({ id, name }) => {
@@ -8,9 +8,11 @@ const PhoneBookItem = ({ id, name }) => {
   function handleDelete(id) {
     dispatch(delProfile(id));
   }
-
+  function handleSelect(id) {
+    dispatch(selectProfile(id));
+  }
   return (
-    <li className={styles.li}>
+    <li className={styles.li} onClick={() => handleSelect(id)}>
       <p>{name}</p>
       <button 
         className={styles.button}

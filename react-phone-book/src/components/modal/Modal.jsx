@@ -1,6 +1,7 @@
 import ReactModal from "react-modal"
 import AddForm from "../addForm/AddForm";
 import { useSelector } from "react-redux";
+import DetailProfile from "../detailProfile/DetailProfile";
 
 const customStyles = {
   overlay: {
@@ -18,15 +19,13 @@ const customStyles = {
   }
 };
 
-const Modal = () => {
+const Modal = ({ type }) => {
   const isOpen = useSelector(state => state.modal.isOpen);
 
   return (
-    <ReactModal
-      isOpen={isOpen? isOpen : false}
-      style={customStyles}
-    >
-      <AddForm />
+    <ReactModal isOpen={isOpen} style={customStyles}>
+      {type === 'detail' && <DetailProfile />}
+      {type === 'add' && <AddForm />}
     </ReactModal>
   )
 }
