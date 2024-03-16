@@ -1,14 +1,15 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styles from "./SearchBar.module.scss";
 import { useRef } from "react";
-import { searchProfile } from "../../store/phoneBook";
+import { checkSearchState, searchProfile } from "../../store/phoneBook";
 
 const SearchBar = () => {
   const searchInput = useRef('');
   const dispatch = useDispatch();
   
   function handleSearch() {
-    dispatch(searchProfile(searchInput.current?.value));
+    dispatch(searchProfile(searchInput.current.value)); //ref 값은 할당이 안됨?
+    dispatch(checkSearchState(searchInput.current.value));
   }
 
   return (

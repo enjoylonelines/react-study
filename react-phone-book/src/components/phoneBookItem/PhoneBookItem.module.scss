@@ -1,0 +1,17 @@
+.li {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .button {
+    height: 2rem;
+    padding: 0 1rem;
+    background-color:darkred;
+    border-radius: 0.5rem;
+    border: none;
+    &:hover {
+      background-color: crimson;
+    } 
+  }
+  
+}
