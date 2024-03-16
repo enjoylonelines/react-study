@@ -1,5 +1,5 @@
 import './App.css'
-import PhoneBook from './components/PhoneBook/PhoneBook'
+import PhoneBook from './components/phoneBook/PhoneBook'
 
 function App() {
   return <PhoneBook />
