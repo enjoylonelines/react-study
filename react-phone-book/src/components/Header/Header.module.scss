@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  .button {
+    position: absolute;
+    right: 1rem;
+    top: 0.3rem;
+    background-color:black;
+    border-radius: 1rem;
+    border:none;
+    font-size: 2rem;
+    color: blue;
+    font-weight: 700;
+    &:hover {
+      color:cornflowerblue;
+    }
+  }
+}
