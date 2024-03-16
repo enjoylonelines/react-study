@@ -1,15 +1,16 @@
-import { useState } from "react";
 import Modal from "../modal/Modal";
 import styles from "./Header.module.scss";
+import { useDispatch } from "react-redux";
+import { toggleModal } from "../../store/modal";
 
 const Header = () => {
-  const [isOpen, setOpen] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <header className={styles.header}>
       <p>연락처</p>
-      <button onClick={() => setOpen(true)} className={styles.button}>+</button>
-      <Modal isOpen={isOpen} setOpen={setOpen} />
+      <button onClick={() => dispatch(toggleModal())} className={styles.button}>+</button>
+      <Modal />
     </header>
   )
 }

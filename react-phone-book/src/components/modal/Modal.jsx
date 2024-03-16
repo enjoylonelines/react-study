@@ -1,7 +1,7 @@
 import ReactModal from "react-modal"
-import styles from "./Modal.module.scss";
+import AddForm from "../addForm/AddForm";
+import { useSelector } from "react-redux";
 
-// 모달 스타일을 지정할 CSS 객체
 const customStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0)'
@@ -18,15 +18,15 @@ const customStyles = {
   }
 };
 
-const Modal = ({ isOpen, setOpen }) => {
+const Modal = () => {
+  const isOpen = useSelector(state => state.modal.isOpen);
+
   return (
-    <ReactModal 
-      isOpen={isOpen} 
-      //className={styles.modal}
+    <ReactModal
+      isOpen={isOpen? isOpen : false}
       style={customStyles}
     >
-      <div>모달입니다</div>
-      <button onClick={() => setOpen(false)}>모달닫기</button>
+      <AddForm />
     </ReactModal>
   )
 }
