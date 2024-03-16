@@ -1,6 +1,6 @@
-import Header from "../Header/Header"
-import PhoneBookList from "../PhoneBookList/PhoneBookList"
-import SearchBar from "../SearchBar/SearchBar"
+import Header from "../header/Header"
+import PhoneBookList from "../phoneBookList/PhoneBookList"
+import SearchBar from "../searchBar/SearchBar"
 import styles from './PhoneBook.module.scss';
 
 const PhoneBook = () => {
