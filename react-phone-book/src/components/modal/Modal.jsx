@@ -19,8 +19,8 @@ const customStyles = {
   }
 };
 
-const Modal = ({ type }) => {
-  const isOpen = useSelector(state => state.modal.isOpen);
+const Modal = () => {
+  const { isOpen, type } = useSelector(state => state.modal);
 
   return (
     <ReactModal isOpen={isOpen} style={customStyles}>

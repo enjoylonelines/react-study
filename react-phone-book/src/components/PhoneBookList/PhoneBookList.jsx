@@ -12,14 +12,14 @@ const PhoneBookList = () => {
       {!isSearch && profiles.map(list => (
           <React.Fragment key={list.id}>
             <PhoneBookItem id={list.id} name={list.name} />
-            <Modal type="detail" />
+            <Modal />
           </React.Fragment>
       ))}
 
       {isSearch && searchs.map(list => (
           <React.Fragment key={list.id}>
             <PhoneBookItem id={list.id} name={list.name} />
-            <Modal type="detail" />
+            <Modal />
           </React.Fragment>
       ))}
     </ol>

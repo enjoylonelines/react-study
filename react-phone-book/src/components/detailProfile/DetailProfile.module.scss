@@ -1,5 +1,28 @@
 .div {
   display: flex;
   flex-direction: column;
-  
+  color: aliceblue;
+
+  .p {
+    font-weight: 700;
+  }
+
+  .button {
+    margin: 0.5rem;
+    height: 2rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+  #del {
+    background-color: darkred;
+    &:hover {
+      background-color: crimson;
+    }
+  }
+  #close {
+    &:hover {
+      background-color: lightslategray;  
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import Modal from "../modal/Modal";
 import styles from "./Header.module.scss";
 import { useDispatch } from "react-redux";
-import { toggleModal } from "../../store/modal";
+import { openModal } from "../../store/modal";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -9,8 +9,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <p>연락처</p>
-      <button onClick={() => dispatch(toggleModal())} className={styles.button}>+</button>
-      <Modal type="add"/>
+      <button onClick={() => dispatch(openModal('add'))} className={styles.button}>+</button>
+      <Modal/>
     </header>
   )
 }

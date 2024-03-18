@@ -12,7 +12,11 @@ const phoneBookSlice = createSlice({
   initialState,
   reducers: {
     addProfile(prevState, { payload }) {
-      prevState.profiles.push(payload);
+      const newProfile = payload;
+      return {
+        ...prevState,
+        profiles: [...prevState.profiles, newProfile],
+      }
     },
     delProfile(prevState, { payload }) {
       const newProfiles = prevState.profiles.filter(prof => prof.id !== payload);
@@ -33,11 +37,11 @@ const phoneBookSlice = createSlice({
       if (payload.trim() === '') return { ...prevState, isSearch: false };
       else return { ...prevState, isSearch: true };
     },
-    selectProfile(prevState, { payload }) {
-      const selectedProfile = prevState.profiles.filter(prof => prof.id === payload);
+    selectProfile(prevState, { payload }) { // filter >> find
+      const selectedProfile = prevState.profiles.find(prof => prof.id === payload);
       return {
         ...prevState,
-        selectedProfile,
+        selectedProfile: selectedProfile,
       }
     },
   }

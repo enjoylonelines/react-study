@@ -3,7 +3,7 @@ import styles from "./AddForm.module.scss";
 import { useRef } from "react";
 import { addProfile } from "../../store/phoneBook";
 import { useDispatch } from "react-redux";
-import { toggleModal } from '../../store/modal';
+import { closeModal } from '../../store/modal';
 
 const AddForm = () => {
   const nameInput = useRef('');
@@ -20,7 +20,7 @@ const AddForm = () => {
     dispatch(addProfile(newProfile));
     nameInput.current.value = '';
     numberInput.current.value = '';
-    dispatch(toggleModal());
+    dispatch(closeModal());
   }
 
   return (
@@ -48,7 +48,7 @@ const AddForm = () => {
         >
           번호 추가
         </button>
-        <button onClick={() => dispatch(toggleModal())}>취소</button>
+        <button onClick={() => dispatch(closeModal())}>취소</button>
       </div>
     </form>
   )
