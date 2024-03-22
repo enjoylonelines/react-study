@@ -20,14 +20,12 @@ const phoneBookSlice = createSlice({
     },
     delProfile(prevState, { payload }) {
       const newProfiles = prevState.profiles.filter(prof => prof.id !== payload);
-      return {
-        ...prevState,
-        profiles: newProfiles,
-      }
+      prevState.profiles.push(newProfiles);
+      // lodesh? 몰라요..
     },
     searchProfile(prevState, { payload }) {
-      const searchData =
-        prevState.profiles.filter(prof => prof.name.includes(payload));
+      const searchData = prevState.profiles.filter(prof => prof.name.includes(payload));
+      
       return {
         ...prevState,
         searchs: searchData,

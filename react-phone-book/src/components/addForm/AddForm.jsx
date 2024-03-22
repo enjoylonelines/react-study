@@ -31,6 +31,8 @@ const AddForm = () => {
           ref={nameInput}
           name="name"
           type="text"
+          //value=
+          //onChange= ??? 유효성 검사 굿
         />
       </div>
       <div className={styles.div}>

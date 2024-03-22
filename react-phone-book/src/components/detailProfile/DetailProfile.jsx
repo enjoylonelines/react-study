@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import styles from "./DetailProfile.module.scss";
 import { closeModal } from "../../store/modal";
 import { delProfile } from "../../store/phoneBook";
+import userImg from '../../assets/user.png';
 
 const DetailProfile = () => {
   console.log('render');

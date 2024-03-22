@@ -1,4 +1,4 @@
-function decomposeHangul(char) {
+function decomposeHangul(char) { // 유 
   const code = char.charCodeAt(0) - 0xAC00;
   const 종성 = code % 28; 
   const 중성 = ((code - 종성) / 28) % 21; 
