@@ -1,6 +1,12 @@
 export interface Pokemon {
-  id: number,
+  id: number;
   name: string;
+}
+
+export interface PokemonName {
+  data: {
+    names: string[];
+  };
 }
 
 export interface PokemonApiRes {

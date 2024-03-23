@@ -1,17 +1,18 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { Pokemon } from '../types/Pokemon'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+//import type { Pokemon, PokemonName } from "../types/Pokemon";
 
 export const pokemonApi = createApi({
-  reducerPath: 'pokemonApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
+  reducerPath: "pokemonApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://pokeapi.co/api/v2/" }),
   endpoints: (builder) => ({
-    getPokemonByName: builder.query<Pokemon, string>({
-      query: (name) => `pokemon/species/${name}`,
-    }),
-    getAllOfHangulName: builder.query<Pokemon, string>({
-      query: (id) => `pokemon/species/${id}/names[2]`
+    getAllOfHangulName: builder.query({
+      query: (id) => {
+        for (let i = 0; i < 100; i++) {
+          `pokemon-species/${id}`;
+        }
+      },
     }),
   }),
-})
+});
 
-export const { useGetPokemonByNameQuery, useGetAllOfHangulNameQuery } = pokemonApi
+export const { useGetAllOfHangulNameQuery } = pokemonApi;
