@@ -9,7 +9,7 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <Main setData={setPokemonData} />
+      <Main setData={setPokemonData} data={pokemonData} />
     </React.Fragment>
   );
 }

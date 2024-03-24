@@ -6,11 +6,7 @@ export const pokemonApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://pokeapi.co/api/v2/" }),
   endpoints: (builder) => ({
     getAllOfHangulName: builder.query({
-      query: (id) => {
-        for (let i = 0; i < 100; i++) {
-          `pokemon-species/${id}`;
-        }
-      },
+      query: () => `pokemon?limit=50`,
     }),
   }),
 });
