@@ -7,7 +7,7 @@ const pokemonsSlice = createSlice({
   },
   reducers: {
     setPokemons(state, { payload }) {
-      //state.pokemons = payload;
+      state.pokemons = payload;
     },
   },
 });
