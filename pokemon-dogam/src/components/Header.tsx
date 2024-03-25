@@ -1,9 +1,9 @@
 function Header() {
   return (
-    <div>
-      
-    </div>
-  )
+    <header>
+      <h1>포켓몬 도감</h1>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

@@ -1,14 +1,15 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-//import type { Pokemon, PokemonName } from "../types/Pokemon";
+import { BASE_URL, LIMIT_NUM } from "../constants/constants";
 
 export const pokemonApi = createApi({
   reducerPath: "pokemonApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://pokeapi.co/api/v2/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
-    getAllOfHangulName: builder.query({
-      query: () => `pokemon?limit=50`,
+    getPokemons: builder.query({
+      query: () => `pokemon?limit=${LIMIT_NUM}`,
     }),
   }),
 });
 
-export const { useGetAllOfHangulNameQuery } = pokemonApi;
+export const pokemonApiReducer = pokemonApi.reducer;
+export const { useGetPokemonsQuery } = pokemonApi;

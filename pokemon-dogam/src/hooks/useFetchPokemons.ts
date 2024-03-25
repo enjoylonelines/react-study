@@ -1,16 +1,23 @@
-import { useEffect, useState } from "react";
-import { BASE_URL, LIMIT_NUM } from "../constants/constants";
+import { useDispatch } from "react-redux";
+import { useGetPokemonsQuery } from "../api/pokemonApi";
+import { setPokemons } from "../slices/pokemons";
 
 export const useFetchPokemons = () => {
-  const [pokemons, setPokemons] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const { data, error, isLoading } = useGetPokemonsQuery();
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-   const fetchPokemons = async () => {
-    setIsLoading(true);
-    const url = `${BASE_URL}/pokemon?limit=${LIMIT_NUM}`;
-    const res = 
-   }
-  }, [])
-  
+  const fetchPokemons = async () => {
+    const loadedPokemons = await data?.results.map((pokemon, idx) => ({
+      name: pokemon.name,
+      id: idx + 1,
+      img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+        idx + 1
+      }.png`,
+    }));
+    dispatch(setPokemons(loadedPokemons));
+  };
+
+  fetchPokemons();
+
+  return { error, isLoading };
 };
