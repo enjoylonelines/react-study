@@ -1,15 +1,9 @@
-import React, { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/router";
 
 function App() {
-  return (
-    <React.Fragment>
-      <Header />
-      <Main />
-    </React.Fragment>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
