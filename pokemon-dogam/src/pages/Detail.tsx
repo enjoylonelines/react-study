@@ -3,8 +3,7 @@ import { useFetchInfo } from "../hooks/useFetchInfo";
 import React, { useEffect, useState } from "react";
 import { useFetchPokemons } from "../hooks/useFetchPokemons";
 import { Pokemon } from "../types/Pokemon";
-import TypeBox from "../components/typeBox";
-import { checkType } from "../utils/checkType";
+import TypeBox from "../components/TypeBox";
 
 function Detail() {
   const { id } = useParams();
@@ -25,14 +24,9 @@ function Detail() {
         <li className="mb-4">몸무게: {weight}</li>
         <li className="mb-4">키: {height}</li>
         <div>
-          {types?.map((type, idx) => {
-            const classes = `ml-4 inline-block bg-${type.color}-500`;
-            return (
-              <li key={idx} className={classes}>
-                {type.type}
-              </li>
-            );
-          })}
+          {types?.map((type, idx) => (
+            <TypeBox key={idx} idx={idx} type={type} />
+          ))}
         </div>
       </ul>
     </>
