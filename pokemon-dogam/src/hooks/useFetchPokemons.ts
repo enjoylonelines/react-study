@@ -1,14 +1,11 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useGetPokemonsQuery } from "../api/pokemonApi";
-import { setPokemons } from "../slices/pokemons";
+import { useEffect, useState } from "react";
+import { useGetPokemonsQuery } from "../redux/api/pokemonApi";
 
 export const useFetchPokemons = () => {
+  const [pokemons, setPokemons] = useState([]);
   const { data, error, isLoading } = useGetPokemonsQuery();
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    // ;;;
     if (data) {
       const loadedPokemons = data.results.map((pokemon, idx) => ({
         name: pokemon.name,
@@ -17,9 +14,9 @@ export const useFetchPokemons = () => {
           idx + 1
         }.png`,
       }));
-      dispatch(setPokemons(loadedPokemons));
+      setPokemons(() => loadedPokemons);
     }
-  }, [data, dispatch]);
+  }, [data]);
 
-  return { error, isLoading };
+  return { pokemons, error, isLoading };
 };
