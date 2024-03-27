@@ -7,7 +7,7 @@ import React from "react";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <Layout />,
     children: [
       {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
           </>
         ),
       },
-      { path: "/:id", element: <Detail /> },
+      { path: ":id", element: <Detail /> },
     ],
   },
 ]);

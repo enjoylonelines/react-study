@@ -11,8 +11,12 @@ export const pokemonApi = createApi({
     getInfo: builder.query({
       query: (id) => `/pokemon/${id}`,
     }),
+    getSpecies: builder.query({
+      query: () => "/pokemon-species",
+    }),
   }),
 });
 
 export const pokemonApiReducer = pokemonApi.reducer;
-export const { useGetPokemonsQuery, useGetInfoQuery } = pokemonApi;
+export const { useGetPokemonsQuery, useGetInfoQuery, useGetSpeciesQuery } =
+  pokemonApi;

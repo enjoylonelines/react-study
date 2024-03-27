@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
-import { useGetPokemonsQuery } from "../redux/api/pokemonApi";
+import { useGetSpeciesQuery } from "../redux/api/pokemonApi";
 
 export const useFetchPokemons = () => {
   const [pokemons, setPokemons] = useState([]);
-  const { data, error, isLoading } = useGetPokemonsQuery();
+  const { data, error, isLoading } = useGetSpeciesQuery();
 
   useEffect(() => {
     if (data) {
-      const loadedPokemons = data.results.map((pokemon, idx) => ({
-        name: pokemon.name,
-        id: idx + 1,
-        img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-          idx + 1
-        }.png`,
-      }));
-      setPokemons(() => loadedPokemons);
+      const promises = data.results.map((result) =>
+        fetch(result.url).then((res) => res.json())
+      );
+      Promise.all(promises).then((names) => {
+        const loadedPokemons = names.map((name, idx) => ({
+          name: name.names[2].name,
+          id: idx + 1,
+          img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+            idx + 1
+          }.png`,
+        }));
+
+        setPokemons(() => loadedPokemons);
+      });
     }
   }, [data]);
 
