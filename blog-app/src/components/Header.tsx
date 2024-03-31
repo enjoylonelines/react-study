@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
-    <header className="h-[5.5rem] fixed flex text-xl w-full ">
+    <header className="h-[5.5rem] fixed flex text-xl w-full z-10 top-0">
       <div className="flex justify-between px-8 mx-[21.125rem] w-full">
-        <div className="content-center">{"<BeomLog/>"}</div>
+        <Link to={"/"} className="content-center">
+          {"<BeomLog/>"}
+        </Link>
         <div className="content-center">
           <input
             type="text"
