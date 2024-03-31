@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "id": "0",
+      "title": "json server 이용 방법",
+      "body": "이렇게 이렇게 쓴다 이렇게 이렇게 쓴다",
+      "date": "23.04.01",
+      "img": "https://velog.velcdn.com/images/juunini/post/37fac54d-baee-49f8-8efc-a5eab72e9a68/image.webp"
+    },
+    {
+      "id": "40e1",
+      "title": "redux toolkit 사용법",
+      "body": "요렇게 저렇게 쓴다 요렇게 저렇게 쓴다",
+      "date": "23.04.01"
+    },
+    {
+      "id": "cb95",
+      "title": "css가 제일 어렵다",
+      "body": "요렇게 저렇게 쓴다 요렇게 저렇게 쓴다",
+      "date": "23.04.01"
+    }
+  ]
+}
