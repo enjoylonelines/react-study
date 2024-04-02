@@ -11,13 +11,22 @@
       "id": "40e1",
       "title": "redux toolkit 사용법",
       "body": "요렇게 저렇게 쓴다 요렇게 저렇게 쓴다",
-      "date": "23.04.01"
+      "date": "23.04.01",
+      "img": "https://velog.velcdn.com/images/jh0152park/post/b863b132-4193-4ca9-b514-b484edbbef72/image.png"
     },
     {
       "id": "cb95",
       "title": "css가 제일 어렵다",
       "body": "요렇게 저렇게 쓴다 요렇게 저렇게 쓴다",
-      "date": "23.04.01"
+      "date": "23.04.01",
+      "img": "https://velog.velcdn.com/images/team-return/post/8b792a3a-4490-4f18-b726-13d7cec28a1e/image.gif"
+    },
+    {
+      "id": "cb95",
+      "title": "css가 제일 어렵다",
+      "body": "요렇게 저렇게 쓴다 요렇게 저렇게 쓴다",
+      "date": "23.04.01",
+      "img": "https://velog.velcdn.com/images/nanotoly/post/5fe29bd5-121b-4aa0-981f-664835d90f4a/image.gif"
     }
   ]
 }

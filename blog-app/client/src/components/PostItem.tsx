@@ -4,9 +4,13 @@ function PostItem({ post }) {
   const { id, title, body, date, img } = post;
 
   return (
-    <li className="bg-stone-900 w-[20rem] h-[23.563rem] rounded-sm relative">
+    <li className="bg-stone-900 w-[20rem] h-[23.563rem] rounded-md relative">
       <Link to={`/${id}`}>
-        <img src={img} alt="포스트 이미지" className="h-[10.4375rem]" />
+        <img
+          src={img}
+          alt="포스트 이미지"
+          className="h-[10.4375rem] rounded-t-md object-cover w-full"
+        />
         <div className="flex flex-col text-left p-[1rem]">
           <h2 className="text-xl font-bold ">{title}</h2>
           {/* 포매팅필요 */}

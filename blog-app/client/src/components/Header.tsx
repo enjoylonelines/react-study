@@ -4,7 +4,10 @@ function Header() {
   return (
     <header className="h-[5.5rem] fixed flex text-xl w-full z-10 top-0">
       <div className="flex justify-between px-8 mx-[21.125rem] w-full">
-        <Link to={"/"} className="content-center">
+        <Link
+          to={"/"}
+          className="content-center font-extrabold text-violet-800 text-3xl "
+        >
           {"<BeomLog/>"}
         </Link>
         <div className="content-center">

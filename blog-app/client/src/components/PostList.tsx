@@ -1,10 +1,9 @@
 import PostItem from "./PostItem";
-import { useGetPostQuery } from "../redux/api/posts";
+import { useGetPostsQuery } from "../redux/api/posts";
 
 function PostList() {
-  const { data: posts, isLoading, error } = useGetPostQuery();
+  const { data: posts, isLoading, error } = useGetPostsQuery();
 
-  console.log(posts);
   return (
     <>
       {isLoading && <p>isLoading...</p>}
@@ -12,7 +11,7 @@ function PostList() {
       {posts && (
         <main>
           <p className="text-left mt-8 ml-4">n posts</p>
-          <ul className="grid gap-8 place-items-center lg:grid-cols-2 xl:grid-cols-3 pt-[4rem]">
+          <ul className="grid gap-8 place-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-[4rem]">
             {posts.map((post) => {
               return <PostItem key={post.id} post={post} />;
             })}
