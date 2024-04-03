@@ -23,3 +23,11 @@ export const setPost = async (data) => {
     console.error(error);
   }
 };
+
+export const deletePost = async (id) => {
+  try {
+    return await customAxios.delete(`posts/${id}`);
+  } catch (error) {
+    console.error(error);
+  }
+};
