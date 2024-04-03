@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 function Header() {
   return (
@@ -6,7 +7,7 @@ function Header() {
       <div className="flex justify-between px-8 mx-[21.125rem] w-full">
         <Link
           to={"/"}
-          className="content-center font-extrabold text-violet-800 text-3xl "
+          className="content-center font-extrabold text-violet-800 text-3xl hover:text-violet-600"
         >
           {"<BeomLog/>"}
         </Link>
@@ -16,7 +17,10 @@ function Header() {
             placeholder="검색하세요"
             className="mr-2 rounded-md p-1"
           />
-          <button className="">검색</button>
+          <Button>검색</Button>
+          <Button>
+            <Link to={"/post"}>새 글 작성</Link>
+          </Button>
         </div>
       </div>
     </header>

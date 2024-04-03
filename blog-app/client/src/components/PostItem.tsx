@@ -4,7 +4,10 @@ function PostItem({ post }) {
   const { id, title, body, date, img } = post;
 
   return (
-    <li className="bg-stone-900 w-[20rem] h-[23.563rem] rounded-md relative">
+    <li
+      className="bg-stone-900 w-[20rem] h-[23.563rem] rounded-md relative hover:animate-bounce"
+      id="card"
+    >
       <Link to={`/${id}`}>
         <img
           src={img}
