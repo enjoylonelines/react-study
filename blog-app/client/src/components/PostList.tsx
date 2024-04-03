@@ -1,8 +1,16 @@
 import PostItem from "./PostItem";
-import { useGetPostsQuery } from "../redux/api/posts";
+import { useQuery } from "@tanstack/react-query";
+import { getPosts } from "../api/http";
 
 function PostList() {
-  const { data: posts, isLoading, error } = useGetPostsQuery();
+  const {
+    data: posts,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["posts"],
+    queryFn: getPosts,
+  });
 
   return (
     <>

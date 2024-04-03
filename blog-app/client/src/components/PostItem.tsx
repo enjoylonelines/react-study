@@ -5,7 +5,7 @@ function PostItem({ post }) {
 
   return (
     <li
-      className="bg-stone-900 w-[20rem] h-[23.563rem] rounded-md relative hover:animate-bounce"
+      className="bg-stone-900 w-[20rem] h-[23.563rem] rounded-md relative"
       id="card"
     >
       <Link to={`/${id}`}>

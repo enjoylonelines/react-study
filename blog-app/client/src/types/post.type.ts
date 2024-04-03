@@ -1,9 +1,5 @@
-export interface PostType {
-  post: PostItemType[];
-}
-
-export interface PostItemType {
-  id: number;
+export interface Post {
+  id: string;
   title: string;
   body: string;
   date: string;
