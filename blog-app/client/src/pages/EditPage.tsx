@@ -40,3 +40,4 @@ function DetailPage() {
 }
 
 export default DetailPage;
+//dsaf
